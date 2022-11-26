@@ -19,8 +19,9 @@ public class Client {
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private Collection<Compte> comptes;
 
-    public Client(String nom) {
+    public Client(String nom, String username) {
         this.nom = nom;
+        this.username = username;
     }
 
     public Client(Long code) {
