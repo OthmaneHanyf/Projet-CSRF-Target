@@ -13,8 +13,8 @@ import java.util.Date;
 public class CompteCourant extends Compte {
     private double decouvert;
 
-    public CompteCourant(String code, Date dateCreation, double solde, double decouvert) {
-        super(dateCreation, solde);
+    public CompteCourant(Date dateCreation, double solde, Client client, double decouvert) {
+        super(dateCreation, solde, client);
         this.decouvert = decouvert;
     }
 }

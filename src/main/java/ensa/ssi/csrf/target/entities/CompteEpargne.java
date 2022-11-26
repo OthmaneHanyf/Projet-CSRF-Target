@@ -14,8 +14,8 @@ import java.util.Date;
 public class CompteEpargne extends Compte {
     private double taux;
 
-    public CompteEpargne(String code, Date dateCreation, double solde, double taux) {
-        super(dateCreation, solde);
+    public CompteEpargne(Date dateCreation, double solde, Client client, double taux) {
+        super(dateCreation, solde, client);
         this.taux = taux;
     }
 }

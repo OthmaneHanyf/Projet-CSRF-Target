@@ -22,8 +22,9 @@ public abstract class Operation implements Serializable {
     @JoinColumn(name = "codeEmploye")
     private Employe employe;
 
-    public Operation(Date date, double montant) {
+    public Operation(Date date, double montant, Compte compte) {
         this.date = date;
         this.montant = montant;
+        this.compte = compte;
     }
 }

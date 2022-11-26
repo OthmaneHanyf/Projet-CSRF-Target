@@ -8,13 +8,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity @Data @NoArgsConstructor @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, length = 8)
 public abstract class Compte implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long code;
+    @GeneratedValue
+    private UUID code;
     private Date dateCreation;
     private double solde;
     @ManyToOne
@@ -26,8 +27,9 @@ public abstract class Compte implements Serializable {
     @OneToMany(mappedBy = "compte", fetch = FetchType.LAZY)
     private Collection<Operation> operations;
 
-    public Compte(Date dateCreation, double solde) {
+    public Compte(Date dateCreation, double solde, Client client) {
         this.dateCreation = dateCreation;
         this.solde = solde;
+        this.client = client;
     }
 }

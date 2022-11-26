@@ -15,10 +15,15 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;
     private String nom;
+    private String username;
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private Collection<Compte> comptes;
 
     public Client(String nom) {
         this.nom = nom;
+    }
+
+    public Client(Long code) {
+        this.code = code;
     }
 }
