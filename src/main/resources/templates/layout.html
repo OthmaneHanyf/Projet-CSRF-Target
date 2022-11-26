@@ -15,8 +15,8 @@
             <a th:href="@{/}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">CSFR Target</a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a th:href="@{/comptes}" class="nav-link px-2 link-dark">Comptes</a></li>
-                <li><a th:href="@{/clients}" class="nav-link px-2 link-dark">Clients</a></li>
+                <li><a sec:authorize="isAuthenticated()" th:href="@{/comptes}" class="nav-link px-2 link-dark">Comptes</a></li>
+                <li><a sec:authorize="isAuthenticated() && hasRole('ADMIN')" th:href="@{/clients}" class="nav-link px-2 link-dark">Clients</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
