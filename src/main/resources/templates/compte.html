@@ -93,7 +93,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-virement" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                                <form th:action="@{/operations}" method="post" class="py-3">
+                                <form th:action="@{/operations}" method="get" class="py-3">
                                     <input type="hidden" name="codeCompte" th:value="${compte.code}" />
                                     <input type="hidden" name="opType" value="virement" />
                                     <div class="row mb-3">
