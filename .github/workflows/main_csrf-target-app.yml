@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'csrf-target-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9F36CF755B640A1BBDAD8E6B68129CA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: '*.jar'
