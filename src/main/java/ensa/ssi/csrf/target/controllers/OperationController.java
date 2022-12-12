@@ -22,7 +22,7 @@ public class OperationController {
         this.operationService = operationService;
     }
 
-    @RequestMapping(value = "/operations", method = RequestMethod.POST)
+    @RequestMapping(value = "/operations", method = RequestMethod.GET)
     public String create(Model model, @RequestParam("codeCompte") String codeCompte,
                          @RequestParam("opType") String opType,
                          @RequestParam("montant") String montant,
